@@ -3,3 +3,5 @@ node_modules/
 dist/
 *.tsbuildinfo
 test-results/
+.site-package/
+beka-deploy.tar.gz
