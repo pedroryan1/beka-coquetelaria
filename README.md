@@ -38,6 +38,7 @@ Antes da reunião, use **Restaurar demonstração**, no painel. A ação pede co
 - `src/admin.tsx`: operações administrativas locais.
 - `src/ui.tsx`: componentes reutilizáveis, modais com foco contido e fechamento por Escape.
 - `src/styles.css`: identidade visual e layouts responsivos; respeita preferência por movimento reduzido.
+- `src/motion.ts` e `src/motion.css`: entradas ao rolar, transições curtas nos fluxos e feedback de toque/hover. Usa APIs nativas, sem biblioteca adicional; cancela os efeitos quando a preferência por movimento reduzido é ativada, inclusive durante o uso. No celular, os movimentos são menores e mais rápidos.
 
 O roteamento usa History API; todas as rotas têm acesso direto no servidor Vite. Os formulários preservam informações ao voltar entre etapas; o rascunho da contratação e o carrinho são mantidos apenas enquanto suas respectivas páginas estão abertas. Cadastros, configuração, solicitações enviadas e pedidos persistem no localStorage. O último pedido da aba é identificado em sessionStorage.
 
@@ -54,6 +55,7 @@ Para testes de navegador, é necessário Playwright e Microsoft Edge. `tests/bro
 node tests/browser.mjs
 node tests/admin-browser.mjs
 node tests/sync-browser.mjs
+node tests/motion-browser.mjs
 ```
 
 Os testes usam contextos isolados e restauram seus dados locais. As capturas e relatório são salvos em `test-results/` (ignorado no Git).
