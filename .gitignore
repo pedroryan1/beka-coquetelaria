@@ -1,6 +1,7 @@
 node_modules/
 .pnpm-store/
 dist/
+dist-pages/
 *.tsbuildinfo
 test-results/
 .site-package/

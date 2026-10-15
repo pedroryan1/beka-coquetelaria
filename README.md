@@ -15,6 +15,14 @@ pnpm dev
 
 Alternativamente, `npm install` e `npm run dev`. Para gerar a versão de distribuição: `pnpm build`. Para visualizar esse build: `pnpm preview` (porta padrão 4173). O servidor que hospedar `dist/` precisa redirecionar rotas da aplicação para `index.html`.
 
+## Publicar no GitHub Pages
+
+O arquivo ZIP é uma cópia para download; o GitHub Pages não descompacta nem compila o código TypeScript automaticamente. Este repositório usa `.github/workflows/pages.yml` para instalar dependências, testar, compilar e publicar a pasta `dist-pages` a cada envio para `main`.
+
+No repositório, em **Settings → Pages → Build and deployment → Source**, escolha **GitHub Actions**. Acompanhe a execução em **Actions → Publicar protótipo no GitHub Pages**. O endereço deste projeto é `https://pedroryan1.github.io/beka-coquetelaria/`.
+
+`pnpm build:pages` gera a versão com base `/beka-coquetelaria/`. As páginas internas usam `#/cardapio`, `#/evento-demo` e `#/admin`, para permitir abrir links e recarregar sem erro 404 no Pages. No servidor local e na hospedagem do Sites, as rotas originais continuam funcionando. Se o repositório mudar de nome, ajuste a base no script `build:pages`.
+
 ## Roteiro para a apresentação
 
 1. `/` — identidade e proposta da marca; apresentação tipográfica temporária, substituível.
